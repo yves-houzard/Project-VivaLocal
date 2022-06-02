@@ -1,5 +1,9 @@
 # Projet Apothéose : Un Maraîcher près de chez vous 
 
+Ce projet a été réalisé en équipe.
+
+![Preview Game](Preview.png)
+
 
 ## Présentation :
 Un Maraîcher près de chez vous est une plateforme de recherche par géolocalisation des producteurs locaux.
@@ -14,10 +18,4 @@ Considérer le développement de l’économie locale, c’est trouver différen
 D’un point de vue sanitaire, la consommation locale est propice à l’utilisation de produits d’origine contrôlée et qui ne contiennent pas ou très peu de conservateurs chimiques car ils peuvent être consommés sur place et donc dans un délai plus court.
 D’un point de vue environnemental, la consommation locale réduit la distance parcourue par les aliments, et donc réduit l’impact négatif éventuel du transport sur l’atmosphère.
 
-## Auteurs : 
 
-Marie Pierre Chavez  
-Nicolas Pustovalov  
-Sébastien Emery  
-Adrien Durup  
-Yves Houzard  
