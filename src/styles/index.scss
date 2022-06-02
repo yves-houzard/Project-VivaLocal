@@ -1,0 +1,30 @@
+@use 'reset';
+@use 'vars'as v;
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;400;600;700&display=swap');
+
+html {
+  width: 100%;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  // background-image: linear-gradient(-90deg,transparent 0, white 90%),v.$bg-main;
+  // background-image: linear-gradient(0deg,transparent 85%, white 90%),v.$bg-main;
+  background-repeat: no-repeat;
+  background-size: cover;
+  min-height: 100vh;
+
+  & .main-content {
+      background-image: linear-gradient(0deg, rgba(255, 255, 255, 0.5) 85%, white 90%), v.$bg-main;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+  & .main-content>.home {
+  // & .main-content:has(.home) {
+    background-color:white ;
+  }
+
+
+
+}

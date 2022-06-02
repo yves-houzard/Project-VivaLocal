@@ -1,0 +1,37 @@
+@use 'src/styles/vars' as v;
+
+.header{
+  position: fixed;
+  z-index: 1;
+  width: 100%;
+  height: 10vh;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  background-color: v.$color-light;
+  padding: v.$gutter*1.2 v.$gutter;
+  &__img{
+    width: 2rem;
+  }
+  &__link{
+    display: flex;
+    align-items: center;
+    flex-grow: 1;
+  }
+  &__title{
+    display: inline-block;
+    padding: 0 v.$gutter;
+    color: v.$color-dark;
+    font-size: v.$gutter*1.5;
+  }
+}
+
+@media screen and (min-width: 769px) {
+
+  .header{
+    &__title{
+      font-size: 2.3rem;
+    }
+  }
+  
+}

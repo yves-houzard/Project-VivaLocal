@@ -1,0 +1,145 @@
+@use 'src/styles/vars'as v;
+
+.itemcard {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: stretch;
+  margin-bottom: 1rem;
+  width: 300px;
+  height: 350px;
+  border-radius: 10px;
+  background-color: v.$color-light;
+  box-shadow: v.$shadow-base;
+  overflow: hidden;
+  transition: 1s ease-in-out ;
+
+  &__image__box {
+    position: relative;
+    display: flex;
+    overflow: hidden;
+    align-items: center;
+    justify-content: center;
+    height: 200px;
+    width: 100%;
+    background-image: linear-gradient(#FFFFFFCC,#FFFFFFCC),v.$image-bg-itemcard;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size:cover;
+    // background-image: url('../../assets/images/kiwi.jpg');
+    object-fit: cover;
+  }
+
+  &__image {
+    position: relative;
+    min-width: 100%;
+    min-height: 100%;
+  }
+
+  // &__img{
+  //   background: url('../../assets/images/itemCard.jpg');
+  //   background-repeat: no-repeat;
+  //   background-size: cover;
+  //   background-position: center;
+  //   border-top-left-radius: 10px;
+  //   border-top-right-radius: 10px;
+  //   width: 100%;
+  //   height: 150px;
+  //   color: v.$color-dark;
+  //   align-self: center;
+  // }
+  &__content {
+    background-color: v.$color-light;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    min-height: 110px;
+    display: flex;
+    flex-grow: 1;
+    flex-direction: column;
+    justify-content: space-between;
+    // padding:8px;
+    $margin: 4px 4px;
+    // font-size: 1rem;
+
+    &__name {
+      // font-weight: bold;
+      font-size: 1.1rem;
+      padding: .2rem .5rem;
+      margin: $margin;
+      color: whitesmoke;
+      background-color: black;
+      margin: 0 0 4px 0;
+    }
+
+    &__type {
+      width: fit-content;
+      font-size: .7em;
+      font-weight: 600;
+      padding: .1rem .5rem;
+      background-color: v.$color-button;
+      color: v.$color-light;
+      border-radius: 5px;
+      margin: $margin;
+    }
+
+    &__detail {
+      height: 65px;
+      overflow-y: auto;
+      flex-grow: 1;
+      margin: $margin;
+      line-height: 1rem;
+      font-size: .8em;
+    }
+
+    &__price {
+      font-weight: bold;
+      font-size: 1.2rem;
+      text-align: right;
+      margin: $margin;
+    }
+  }
+
+  &__btn {
+    position: absolute;
+    bottom: 4px;
+    left: 4px;
+    color: v.$color-button;
+    font-size: 1.5rem;
+
+    &--delete,
+    &--edit {
+      display: inline-block;
+      color: v.$color-button;
+      font-size: 1.2rem;
+      background-color: transparent;
+      border: none;
+    }
+  }
+}
+
+@media screen and (min-width: 426px) {
+  .itemcard {
+    // max-width: 300px;
+
+    &__content {
+      width: 100%;
+
+      &--name {
+        font-size: 1.3rem;
+      }
+
+      &--type {
+        font-size: 1rem;
+      }
+
+      &--detail {
+        font-size: .8em;
+      }
+
+      &--price {
+        font-size: 1.3rem;
+      }
+    }
+  }
+
+}

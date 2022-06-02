@@ -1,0 +1,63 @@
+@use 'src/styles/vars' as v;
+
+.new-product{
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  // width: 80%;
+  // &__title{
+  //   font-size: 1.2rem;
+  //   margin: .5rem 0;
+  // }
+  padding: .5rem 0;
+  &__input{
+    display: flex;
+    flex-direction: column;
+    &--radio{
+      display: flex;
+      justify-content: space-around;
+    }
+  }
+  &__field{
+    margin: 0.2rem 0;
+    padding:.3rem;
+    font-size: .8em;
+  }
+  &__btn{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 100%;
+    margin: 0 auto;
+    &-form{
+      padding: .4rem;
+      margin-top: .5rem;
+    }
+  }
+}
+
+@media screen and (min-width: 680px) {
+  .new-product{
+    // width: 50%;
+    // &__title{
+    //   margin: 0 0 .5rem 0;
+    // }
+    &__field{
+      margin: 0.2rem 0;
+      padding:.3rem;
+      font-size: .8em;
+    }
+    &__btn{
+      flex-direction: row;
+      &-form{
+        width: 40%;
+        padding:.2rem;
+        border-radius: 0;
+        font-size: .8rem;
+        margin-top: .5rem;
+      }
+      
+    }
+  }
+  
+}

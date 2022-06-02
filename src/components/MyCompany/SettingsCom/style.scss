@@ -1,0 +1,41 @@
+@use 'src/styles/vars' as v;
+
+.settings-com{
+  position: relative;
+  width: 100%;
+  &__author{
+    display: block;
+    padding: calc(v.$gutter/2) calc(v.$gutter/2) 0 calc(v.$gutter/2);
+  }
+  &__update{
+    display: block;
+    padding: 0 calc(v.$gutter/2) calc(v.$gutter/2) calc(v.$gutter/2);
+  }
+  &__desc{
+    color: v.$color-dark;
+    padding: 1rem;
+  }
+  &__edit{
+    position: absolute;
+    font-size: 1.5rem;
+    top: -2rem;
+    right: 0;
+    color: v.$color-button;
+    background-color: transparent;
+    border: none;
+  }
+}
+
+@media screen and (min-width: 426px) {
+  .settings-com{
+    &__author{
+      display: inline-block;
+      padding: calc(v.$gutter/2);
+    }
+    &__update{
+      display: inline-block;
+      padding: 0 calc(v.$gutter/2);
+    }
+  }
+  
+}

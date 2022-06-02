@@ -1,0 +1,22 @@
+@use 'src/styles/vars' as v;
+
+.leaflet{
+  &-container{
+    position: relative;
+    z-index: 0;
+    height: 85vh;
+  }
+}
+
+@media screen and (min-width: 769px) {
+  .leaflet{
+    &-container{
+      margin: 3rem auto;
+      width: 100%;
+      height:v.$gutter*40;
+      // background-image: url('/src/assets/images/chou-map.jpg') ;
+      // background-size: cover;
+    }
+  }
+
+}

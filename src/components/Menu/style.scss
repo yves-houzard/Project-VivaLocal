@@ -1,0 +1,95 @@
+@use 'src/styles/vars' as v;
+
+.menu{
+  padding-right: 1rem;
+  &__box{
+    width: 50px;
+    height: 50px;
+    border: none;
+    border-radius: 5px;
+    position: relative;
+    background-color: transparent;
+    &--container{
+      width: 40px;
+      height: 30px;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+    &--line{
+      position: absolute;
+      border-radius: 10px;
+      width: 40px;
+      height: 5px;
+      background: v.$color-button;
+      pointer-events: none;
+    }
+    &--line:nth-child(1){
+      top: 0px;
+      transform: rotate(0deg);
+      transition: transform 0.3s ease-in-out, top 0.3s 0.3s ease-in-out;
+    }
+    &--line:nth-child(2){
+      top: 12.5px;
+      transition: opacity 0.3s 0.3s ease-in-out;
+    }
+    &--line:nth-child(3){
+      top: 25px;
+      transform: rotate(0deg);
+      transition: transform 0.3s ease-in-out, top 0.3s 0.3s ease-in-out;
+    }
+    &--active &--line:nth-child(1){
+      top: 12.5px;
+      transform: rotate(45deg);
+      transition: top 0.3s ease-in-out, transform 0.3s 0.3s ease-in-out;
+    }
+    &--active &--line:nth-child(2){
+      transition: opacity 0.3s ease-in-out;
+      opacity: 0;
+    }
+    &--active &--line:nth-child(3){
+      top: 12.5px;
+      transform: rotate(-45deg);
+      transition: top 0.3s ease-in-out, transform 0.3s 0.3s ease-in-out;
+    }
+  }
+  &__content{
+    position: fixed;
+    display: flex;
+    flex-direction: column;
+    top:v.$header-height;
+    right: -20rem;
+    background-color: v.$color-light;
+    width: 50%;
+    padding: 1rem;
+    opacity: 0;
+    transition: opacity .5s ease-in-out, right .3s ease-in-out;
+    &--active{
+      right: 0rem;
+      opacity: 1;
+      transition: opacity .5s ease-in-out, right .3s ease-in-out;
+    }
+  }
+}
+
+@media screen and (min-width: 769px) {
+  .menu{
+    padding: 0;
+    &__box{
+      display: none;
+    }
+    &__content{
+      opacity: 1;
+      position: static;
+      flex-direction: row-reverse;
+      background-color: transparent;
+      justify-content: flex-end;
+      padding: 0;
+      width: 100%;
+    }
+  }
+  
+}
+
+

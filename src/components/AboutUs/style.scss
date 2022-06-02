@@ -1,0 +1,90 @@
+@use 'src/styles/vars' as v;
+
+.aboutus{
+  width: 90%;
+  &__container{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    margin: 5rem 0;
+  }
+  &__title{
+    margin-top: 3rem;
+    font-size: 1.4rem;
+  }
+  &__card{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    width: 14rem;
+    padding: 1rem;
+    margin: 1rem;
+    background-color: white;
+    border-radius: 10px;
+  }
+  &__avatar{
+    border-radius: 10px;
+    width: 10rem;
+    height: 10rem;
+  }
+  &__name{
+    margin: 1rem 0;
+    font-size: 1.1rem;
+    font-weight: bold;
+  }
+  &__role1{
+    font-size: 1.1rem;
+    padding-bottom: 0.2rem;
+    text-decoration: underline;
+  }
+  &__role{
+    color: v.$color-button;
+    font-size: 1.1rem;
+    padding-bottom: 0.2rem;
+    p{
+      padding: 0.2rem;
+      text-align: center;
+    }
+  }
+  &__link{
+    padding: 0.5rem;
+    font-size: 1.5rem;
+    &--in{
+      margin: 0 1rem;
+    }
+    &--git{
+      margin: 0 1rem;
+    }
+  }
+
+}
+.marie{
+  background: url('https://ca.slack-edge.com/T029L5QN3GF-U02A4UFHVDM-d7b574e563a0-512');
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.nicolas{
+  background: url('https://ca.slack-edge.com/T029L5QN3GF-U02BB7LKGLQ-473ce78e342c-512');
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.adrien{
+  background: url('https://ca.slack-edge.com/T029L5QN3GF-U02AH25FH2R-7713be137369-512');
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.seb{
+  background: url('https://ca.slack-edge.com/T24UJ1LA2-U01L7PEB669-b318a8e1a9b6-512');
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.yves{
+  background: url('https://ca.slack-edge.com/TBGQ2SW6T-U026BAG3CH1-181ca9bba864-512');
+  background-repeat: no-repeat;
+  background-size: cover;
+}

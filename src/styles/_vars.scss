@@ -1,0 +1,34 @@
+// color
+
+// Theme 1
+// $color-dark: #343434;
+// $color-light: #F7FFF7;
+// $color-button: #399E5A;
+// $color-button-hover: #14331E;
+// $color-input:rgb(245, 243, 243);
+
+
+// Theme 2
+$color-dark: #343434;
+$color-light: white;
+$color-button: #0ba53e;
+$color-button-hover: #14331E;
+$color-input:white;
+$color-input2:whitesmoke;
+
+// images
+$bg-main:url('/src/assets/images/ble1.jpg');
+// $image-bg-itemcard:url('/src/assets/images/kiwi.jpg');
+$image-bg-itemcard:url('/src/assets/images/fruits-rouges.jpg');
+
+$shadow-base: 0px 5px 5px #00000020;
+// generic 
+
+$gutter: 1rem;
+
+//base sizes for calculation
+$header-height:10vh;
+
+@media screen and (max-width:769px) {
+  $gutter: .8rem;
+}

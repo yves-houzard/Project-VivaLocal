@@ -1,0 +1,86 @@
+@use 'src/styles/vars' as v;
+
+.card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  max-width: 320px;
+  min-width: 250px;
+  margin: v.$gutter;
+  padding: v.$gutter;
+  background-color: v.$color-light;
+  border-radius: 10px;
+  box-shadow: 1px 1px 15px 5px #00000030;
+  transition: 0.2s ease-in-out;
+
+  &:hover {
+  box-shadow: 0px 5px 13px -7px #000000, 5px 5px 15px 5px rgba(0,0,0,0);
+  }
+
+  
+  &__favorites {
+    position: absolute;
+    right: 7%;
+    top: 9%;
+    align-items: center;
+    border-radius: 50%;
+    height: 45px;
+    justify-content: center;
+    width: 45px;
+    background: hsla(0,0%,100%,.75);
+    display: flex;
+
+    &__img{
+      float: right;
+      text-align: right;
+      height: 25px;
+      width: 25px;
+      background-image: url("src/assets/images/removeFav.png");
+      background-repeat: no-repeat;
+      background-size: contain;
+
+      &:hover {
+      background-image: url("src/assets/images/addFav.png");
+      }
+    }
+  }
+
+  &__title {
+    padding-bottom: 1rem;
+    text-align: center;
+    margin-bottom: v.$gutter;
+    font-size: v.$gutter*1.2;
+    font-weight: bold;
+  }
+
+  &__avatar{
+    width: 100%;
+    height: 250px;
+    margin: v.$gutter 0;
+    padding-bottom: v.$gutter*0.5;
+    border-bottom: solid v.$gutter*0.1 black;
+    font-size: v.$gutter*2;
+    text-align: center;
+
+    & img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+
+  &__informations {
+    line-height: v.$gutter*1.4;
+
+    & strong {
+      font-weight: bold;
+      padding-right: v.$gutter;
+    }
+  }
+}
+
+@media screen and (min-width: 769px) {
+  .card {
+    width: v.$gutter*20;
+  }
+}

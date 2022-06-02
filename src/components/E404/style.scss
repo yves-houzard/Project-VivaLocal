@@ -1,0 +1,89 @@
+@use 'src/styles/vars'as v;
+
+.e404 {
+  height: 100vh;
+  width: 100vw;
+  background: url('../../assets/images/404.jpg');
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-color: white;
+  background-position: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+  font-weight: 700;
+
+  &__message {
+    position: fixed;
+    z-index: 1;
+    font-size: 5rem;
+    top:-7rem;
+    animation: message 700ms ease-in forwards;
+  }
+
+  &__btn {
+    width: 10rem;
+  }
+
+  & em {
+    position: relative;
+    color: red;
+    font-size: 1.3em;
+    // animation: m404 200ms ease-out;
+    animation: m404anim 900ms ease-out;
+    // animation-delay: 1s;
+  }
+}
+
+@media screen and (max-width:769px) {
+  .e404 {
+    &__message {
+      font-size: 10vw;
+    }
+  }
+
+}
+
+
+@keyframes message {
+  0% {
+    transform: rotate(-20deg);
+
+  }
+
+  70% {
+    top: v.$gutter*18;
+  }
+
+  85% {
+    top: v.$gutter*14;
+  }
+
+  100% {
+    top: v.$gutter*18;
+  }
+}
+
+@keyframes m404anim {
+  0% {
+    position: relative;
+    top: -100rem;
+  }
+
+  80% {
+    top: -100rem;
+  }
+
+  90% {
+    top: 0rem;
+  }
+
+  95% {
+    top: -4rem;
+  }
+
+  100% {
+    top: 0rem;
+  }
+}

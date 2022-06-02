@@ -1,0 +1,18 @@
+@use 'src/styles/vars' as v;
+
+.favorites {
+  margin-top: v.$gutter;
+  width: 90vw;
+  
+  &__title {
+    text-decoration: underline;
+    font-size: 1.5rem;
+    font-weight: bold;
+  }
+  
+  &__card {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+}

@@ -1,0 +1,11 @@
+@use '../../styles/vars' as v;
+
+.button-ui__base{
+  appearance: unset;
+  border: none;
+  background-color: v.$color-button;
+  color: v.$color-light;
+  border-radius: 8px;
+  font-size: 1.2rem;
+  padding: 1rem;
+}

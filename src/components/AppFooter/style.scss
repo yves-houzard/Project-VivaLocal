@@ -1,0 +1,55 @@
+@use 'src/styles/vars' as v;
+
+.footer{
+  display: flex;
+  flex-direction: column;
+  background-color: v.$color-light;
+  padding: 1rem;
+  z-index: 1;
+  &__link{
+    display: flex;
+    justify-content: space-evenly;
+    font-size: .7rem;
+    color: v.$color-dark;
+  }
+  &__copyright{
+    font-size: .7rem;
+    margin-top: 1rem;
+    color: v.$color-dark;
+    text-align: center;
+  }
+}
+
+@media screen and (min-width: 769px) {
+  .footer {
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 2rem;
+    &__link {
+      justify-content: space-evenly;
+      margin-right: 1.5rem;
+      max-width: 50rem;
+      font-size: 0.9rem;
+  
+      &__aboutus:hover {
+        text-decoration: underline;
+      }
+  
+      &__sitepolicy:hover {
+        text-decoration: underline;
+      }
+  
+      &__contact:hover {
+        text-decoration: underline;
+      }
+    }
+  
+    &__copyright {
+      margin: 0 2rem 0 0;
+      align-self: center;
+      text-align:left;
+    }
+  }
+}
+
+

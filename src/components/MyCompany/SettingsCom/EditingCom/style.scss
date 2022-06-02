@@ -1,0 +1,28 @@
+@use 'src/styles/vars' as v;
+
+.settings-com{
+  position: relative;
+  &__close{
+    position: absolute;
+    font-size: 1.5rem;
+    top: -2rem;
+    right: 0;
+    color: v.$color-button;
+    background-color: transparent;
+    border: none;
+  }
+  &__btn{
+    margin-top: 1rem;
+  }
+
+  &__field{
+    width: 100%;
+    background-color:v.$color-input2;
+    border: none;
+    font-family: "poppins",sans-serif;
+    &::placeholder{
+      font-style: italic;
+    }
+  }
+
+}

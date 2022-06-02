@@ -1,0 +1,88 @@
+@use 'src/styles/vars'as v;
+
+.navbar {
+  display: flex;
+  flex-direction: column;
+  z-index: 1;
+  &__link{
+    padding: 1rem;
+    border-bottom: 1px solid gray;
+    text-align: center;
+  }
+  &__link:last-child{
+    padding-bottom: 0;
+    border-bottom: none;
+  }
+}
+
+@media screen and (min-width: 769px) {
+  .navbar {
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    // padding-right: 1rem;
+
+    &__link {
+      padding: 0 0.6rem;
+      color: v.$color-dark;
+      font-weight: 600;
+      font-size: v.$gutter;
+      transition: color 0.2s, font-weight 0.3s;
+      border-bottom: none;
+
+      &.--register {
+        font-size: .8em;
+        text-decoration: none;
+        // color:rgba(255, 255, 255, 0.7);
+        // margin-left: .5rem;
+        &.--is-active {
+          text-decoration: underline dotted 1px;
+          transition: 100ms ease-in-out;
+        }
+      }
+      &:hover {
+        color: gray;
+        transition: 100ms ease-in-out;
+      }
+
+      &:active {
+        color: rgb(220, 219, 219);
+        transition: 100ms ease-in-out;
+      }
+
+      &:focus {
+       outline: none;
+       position: relative;
+        // text-decoration: underline dotted 1px v.$color-button;
+        &::after{
+          $base-padding:0.6rem;
+          content: "";
+          position: absolute;
+          display: block;
+          right:0;
+          left:$base-padding;
+          bottom:-2px;
+          width: calc(100% - $base-padding*2);
+          height:1px;
+          padding: v.$gutter 0;
+          border-bottom: dotted 1px v.$color-button;
+          animation: nav-focus 300ms ease-in-out;
+        }
+      }
+
+
+      &--active {
+        color: v.$color-button;
+        font-weight: bold;
+      }
+    }
+  }
+}
+
+@keyframes nav-focus{
+  $base-padding:0.6rem;
+from{
+  left:50%;
+  width:0%;
+}
+}

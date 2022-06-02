@@ -1,0 +1,273 @@
+@use 'src/styles/vars'as v;
+
+.mycompany {
+  padding-top: v.$gutter;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+
+  &__grid {
+    // this container is flex until minimum width of window reuired for grid is reached. 
+    display: flex;
+    flex-direction: column;
+  }
+  &__error{
+    position: absolute;
+    z-index: 1;
+  }
+
+  &__avatar {
+    position: relative;
+    width: 100%;
+    height: 0;
+    background-color: whitesmoke;
+    padding-bottom: 75%;
+  }
+
+  &__picture {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+
+    &__wrapper {
+      position: absolute;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+    }
+
+    &__btn {
+      position: absolute;
+      top: auto;
+      bottom: auto;
+      left: auto;
+      right: auto;
+    }
+  }
+
+  &__title {
+    width: 100%;
+    font-size: v.$gutter*1.5;
+    font-weight: bold;
+    text-align: center;
+    margin: v.$gutter*.5 0;
+  }
+
+  &__interaction {
+    flex-shrink: 1;
+    width: inherit;
+    // padding: 16px;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    justify-content: space-evenly;
+
+  }
+
+  &__dropinfos {
+    position: fixed;
+    left: -18rem;
+    // top: 15%;
+    display: flex;
+    flex-direction: row-reverse;
+    z-index: 2;
+    transition: left .3s ease-in-out;
+
+    &--toggle {
+      align-self: flex-start;
+      width: 3.1rem;
+      // height: 15rem;
+      border-bottom-left-radius: 0;
+      border-top-left-radius: 0;
+
+      p {
+        text-align: center;
+        height: 10rem;
+        writing-mode: vertical-rl;
+      }
+    }
+
+    &__container {
+      background-color: v.$color-light;
+      width: 18rem;
+      height: 35rem;
+      overflow-y: scroll;
+    }
+
+    &--active {
+      left: 0;
+      transition: left .3s ease-in-out;
+    }
+  }
+
+  &__infos {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: calc(v.$gutter/2);
+    color: v.$color-button;
+    font-weight: bold;
+
+    &--title {
+      padding-top: .5rem;
+      font-size: v.$gutter*1.1;
+    }
+  }
+
+  &__com {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: calc(v.$gutter/2);
+    color: v.$color-button;
+    font-weight: bold;
+
+    &--title {
+      font-size: v.$gutter*1.1;
+    }
+  }
+
+  &__add {
+    width: 100%;
+    margin-top: 1rem;
+    text-align: center;
+
+    &--btn {
+      margin: 4px 0;
+      padding: calc(v.$gutter / 2);
+      border: none;
+      color: v.$color-light;
+      background-color: v.$color-button;
+      border-radius: 5px;
+
+      &:hover {
+        background-color: v.$color-button-hover;
+      }
+    }
+  }
+
+  // &__filter{
+  //   width: 100%;
+  //   margin: 1%;
+  //   padding: v.$gutter 0;
+  //   // display: flex;
+  //   // justify-content: space-between;
+  // }
+
+  &__product {
+    // grid-area: product;
+    display: block;
+    margin-bottom: 8px;
+    width: inherit;
+    height: 350px;
+  }
+}
+
+@media screen and (min-width: 680px) {
+  .mycompany {
+    &__grid {
+      display: grid;
+      flex-direction: unset;
+      // width: 100%; // if width is not defined we have a grid adapted to its content. in our case, itemcard is our base.
+      padding: 16px;
+      grid-template-columns: 300px 300px;
+      grid-template-rows: auto;
+      grid-template-areas:
+        "main-pic title";
+      gap: 16px 16px;
+      justify-items: center;
+      align-items: start;
+    }
+
+    &__avatar {
+      position: relative;
+      width: 100%;
+      height: 0;
+      background-color: whitesmoke;
+      grid-area: main-pic;
+      justify-self: stretch;
+      padding-bottom: 75%;
+    }
+
+    &__title {
+      margin:1rem 0;
+      padding-bottom: v.$gutter*.5;
+      border-bottom: solid 1px v.$color-dark;
+    }
+
+    &__interaction {
+      flex-shrink: unset;
+      grid-area: title;
+      width: inherit;
+      height : 100%;
+      // padding: 16px;
+      display: flex;
+      flex-direction: column;
+      align-items: stretch;
+      justify-content: space-evenly;
+    }
+
+  }
+
+}
+
+@media screen and (min-width: 916px) {
+  .mycompany {
+    padding-left: 18rem;
+
+    &__avatar {
+      padding-bottom: 75%;
+    }
+
+    &__dropinfos {
+      left: 0;
+      top: v.$header-height;
+      flex-direction: column;
+      z-index: 1;
+
+      &--toggle {
+        align-self: auto;
+        height: 3rem;
+        width: 100%;
+        border-bottom-right-radius: 0;
+        border-top-right-radius: 0;
+        pointer-events: none;
+
+        p {
+          writing-mode: horizontal-tb;
+        }
+      }
+
+      &__container {
+        padding-top: 1rem;
+        overflow: hidden;
+        min-height: calc(100vh - v.$header-height);
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 1250px) {
+  .mycompany {
+    &__grid {
+      grid-template-columns: 300px 300px 300px;
+      grid-template-rows: auto;
+      grid-template-areas: "main-pic main-pic title";
+    }
+
+    &__avatar {
+      grid-column-start: 1;
+      grid-column-end: span 2;
+      padding-bottom: 37.5%;
+    }
+  }
+}

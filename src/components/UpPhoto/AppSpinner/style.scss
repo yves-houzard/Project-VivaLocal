@@ -1,0 +1,23 @@
+.AppSpinner{
+  $base:2rem;
+  width:$base;
+  height:$base;
+  border-radius: calc($base / 2);
+  box-sizing: border-box;
+  border : solid 3px;
+  border-top: none;
+  border-right: none;
+  animation: rotate 500ms infinite;
+}
+
+@keyframes rotate {
+  from{
+    transform : rotate(0deg);
+  }
+  50%{
+    transform : rotate(180deg);
+  }
+  to{
+      transform : rotate(360deg);
+      }
+}

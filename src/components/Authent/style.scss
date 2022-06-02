@@ -1,0 +1,97 @@
+@use '../../styles/vars'as v;
+
+.authent {
+  &__button {
+    position: relative;
+    appearance: unset;
+    z-index: 1;
+    border: none;
+    background-color: v.$color-button;
+    color: v.$color-light;
+    border-radius: 8px;
+    font-size: 1.1rem;
+    padding: 1rem 1rem;
+    margin-bottom: 1rem;
+
+    &__close {
+      align-self: flex-end;
+      background-color: transparent;
+      line-height: 0;
+      border: none;
+      padding: 0;
+      color: v.$color-button;
+      font-size: 2rem;
+      width: 2rem;
+    }
+  }
+
+  &__form {
+    position: fixed;
+    top: v.$header-height;
+    left: -100vw;
+    opacity: 0;
+    transition: opacity 0.2s ease-out;
+    background-color: v.$color-light;
+    box-shadow: 0px 5px 10px #00000020;
+    display: flex;
+    align-items: stretch;
+    justify-content: space-between;
+    flex-direction: column;
+    padding: 1rem;
+    height: 14rem;
+    width: 100%;
+    transition: left 0.3s ease-in-out, opacity 0.2s 0.1s ease-out;
+
+    &.--visible {
+      left: 0;
+      z-index: 2;
+      opacity: 1;
+      transition: opacity 0.2s ease-out, left 0.3s ease-in-out;
+    }
+  }
+}
+
+.svg-icon-logout {
+    fill: v.$color-button;
+    height: 100%;
+    width: 100%;
+}
+
+
+
+@media screen and (min-width: 769px) {
+
+  .authent {
+    &__button {
+      margin-bottom: 0;
+      margin-right: 2rem;
+      padding: 0.5rem 1rem;
+    }
+    &__error{
+      padding: 0;
+      font-size: .8rem;
+      box-shadow: none;
+    }
+
+    &__form {
+      position: absolute;
+      right: -20rem;
+      left: auto;
+      top: v.$header-height;
+      border-radius: 8px;
+      height: 14rem;
+      width: 18rem;
+      transition: right 0.3s ease-in-out, opacity 0.2s 0.1s ease-out;
+
+      &.--visible {
+        right: 0;
+        left: auto;
+        opacity: 1;
+        transition: opacity 0.2s ease-out, right 0.3s ease-in-out;
+      }
+
+    }
+  }
+
+
+}

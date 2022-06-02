@@ -1,0 +1,19 @@
+@use '../../styles/vars'as v;
+
+.app {
+  width: 100%;
+  // min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: stretch;
+  align-items: stretch;
+  min-height: 100vh;
+}
+
+.main-content {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  align-items: center;
+  padding-top: v.$header-height;
+}

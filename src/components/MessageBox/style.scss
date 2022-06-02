@@ -1,0 +1,24 @@
+@use '../../styles/vars' as v;
+
+.message-box {
+  &__default {
+    //width: 100%;
+    opacity: 1;
+    text-align: center;
+    font-size: 1rem;
+    font-weight: 400;
+    background-color:v.$color-light;
+    box-shadow: v.$shadow-base;
+    // border-color: red;
+    color: red;
+    // background-color: transparent;
+    padding: 2rem;
+    transition: opacity 400ms ease-in-out;
+    & .fa-info-circle{
+      margin-right:.5rem;
+    }
+    &--leave{
+      opacity: 0;
+    }
+}
+}
